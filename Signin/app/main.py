@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Depends, HTTPException, status, Header, Security
+from fastapi import FastAPI, Depends, HTTPException, status, Header, Security,Query
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from pydantic import BaseModel
 from jose import JWTError, jwt
@@ -72,8 +72,7 @@ class ProtectedData(BaseModel):
     data: str
 
 # Custom dependency for extracting and verifying JWT from Authorization header
-def get_current_user(credentials: HTTPAuthorizationCredentials = Security(bearer_scheme)):
-    token = credentials.credentials
+def get_current_user(token: str = Query(...)):
     try:
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
         phone_number = payload.get("sub")
