@@ -14,7 +14,7 @@ bearer_scheme = HTTPBearer()
 
 # Twilio setup (replace with your Twilio credentials)
 account_sid = 'AC491098f4e6cc840518cee1118192da2f'
-auth_token = '39b17888d448871d8022463ec8db5f6c'
+auth_token = '131cd8e09f03d183154dfc32b08b0840'
 twilio_client = Client(account_sid, auth_token)
 
 # Azure Redis setup
