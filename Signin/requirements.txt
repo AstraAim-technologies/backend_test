@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pymssql
+azure.identity
+azure.keyvault
+python-dotenv
+twilio
+pyotp
+python-jose
+redis
